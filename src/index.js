@@ -11,7 +11,7 @@ const sliderEl = $(".slider");
 const containerEl = $(".container");
 
 // Setup the Slider
-const slider = new Slider(containerEl, sliderEl, CARD_WIDTH, CARDS_LENGTH);
+const slider = new Slider(containerEl, sliderEl, CARDS_LENGTH, CARD_WIDTH);
 
 // init current index
 let selectedIndex = 0;
