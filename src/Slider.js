@@ -7,18 +7,15 @@
  */
 export default function (container, slider, slidesCount, slideWidth) {
   const containerWidth = container.getBoundingClientRect().width;
-  this._sliderStopThreshold =
+  const sliderStopThreshold =
     slidesCount * slideWidth - containerWidth + slideWidth;
 
   this.slideToIndex = function (index) {
-    if (index < 0) {
-      index = 0;
-      return;
-    } else if (index >= slidesCount) {
-      index = slidesCount - 1;
+    if (index < 0 || index >= slidesCount) {
       return;
     }
-    if (index * slideWidth <= this._sliderStopThreshold) {
+
+    if (index * slideWidth <= sliderStopThreshold) {
       slider.style.transform = `translateX(-${index * slideWidth}px)`;
     }
   };

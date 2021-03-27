@@ -20,8 +20,9 @@ body {
   align-items: center;
   color: #0f0;
   transition: 200ms ease-in-out;
+  border-radius: 5px;
 }
 
 .card.selected {
-  outline: #0f0 4px solid;
+  box-shadow: 2px 2px 5px #000;
 }

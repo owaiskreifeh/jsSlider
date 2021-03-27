@@ -28,6 +28,7 @@ for (let index = 0; index < CARDS_LENGTH; index++) {
   _card.style.height = "240px";
   sliderEl.appendChild(_card);
 }
+$("#card0").classList.add("selected");
 
 // Listen to left and right keypress
 document.addEventListener(
@@ -36,18 +37,21 @@ document.addEventListener(
     if (event.defaultPrevented) {
       return;
     }
+    $("#card" + selectedIndex).classList.remove("selected");
     switch (event.key) {
       case "Left":
       case "ArrowLeft":
-        slider.slideToIndex(--selectedIndex);
+        selectedIndex = Math.max(0, selectedIndex - 1);
         break;
       case "Right":
       case "ArrowRight":
-        slider.slideToIndex(++selectedIndex);
+        selectedIndex = Math.min(CARDS_LENGTH - 1, selectedIndex + 1);
         break;
       default:
         return;
     }
+    $("#card" + selectedIndex).classList.add("selected");
+    slider.slideToIndex(selectedIndex);
     event.preventDefault();
   },
   true
