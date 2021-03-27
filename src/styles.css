@@ -1,0 +1,29 @@
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  border: 1px solid red;
+  overflow: hidden;
+}
+
+.slider {
+  border: 1px solid green;
+  display: flex;
+  transition: 500ms linear;
+  padding: 1em;
+}
+
+.card {
+  background: #595;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0f0;
+  transition: 200ms ease-in-out;
+}
+
+.card.selected {
+  outline: #0f0 4px solid;
+}
