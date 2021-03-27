@@ -20,6 +20,8 @@ const slider = new Slider(
 slider.slideToIndex(5);
 ```
 
-That is :)
+That is it :)
 
 check this repo for example
+
+[https://codesandbox.io/s/misty-sun-zp6tg?file=/src/index.js](fork in CodeSandbox)
