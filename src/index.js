@@ -1,9 +1,10 @@
 import "./styles.css";
-
+import Slider from "./Slider.js";
 // Consts and Helpers
 const $ = document.querySelector.bind(document);
 const CARD_WIDTH = 424 + 25;
 const CARDS_LENGTH = 30;
+
 // Elements
 const sliderEl = $(".slider");
 const containerEl = $(".container");
@@ -47,43 +48,4 @@ document.addEventListener(
   true
 );
 
-class Slider {
-  constructor(options) {
-    this._options = {
-      container: null,
-      slider: null,
-      slidesCount: 0,
-      slideWidth: 0,
-      ...options
-    };
-
-    const containerWidth = this._options.container.getBoundingClientRect()
-      .width;
-    this._sliderStopThreshold =
-      this._options.slidesCount * this._options.slideWidth -
-      containerWidth +
-      this._options.slideWidth;
-
-    this.slideToIndex = function (index) {
-      if (index < 0) {
-        index = 0;
-        return;
-      } else if (index >= this._options.slidesCount) {
-        index = this._options.slidesCount - 1;
-        return;
-      }
-      if (index * this._options.slideWidth <= this._sliderStopThreshold) {
-        this._options.slider.style.transform = `translateX(-${
-          index * this._options.slideWidth
-        }px)`;
-      }
-    };
-  }
-}
-
-const slider = new Slider({
-  container: containerEl,
-  slider: sliderEl,
-  slideWidth: CARD_WIDTH,
-  slidesCount: CARDS_LENGTH
-});
+const slider = new Slider(containerEl, sliderEl, CARD_WIDTH, CARDS_LENGTH);
