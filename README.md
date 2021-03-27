@@ -24,4 +24,4 @@ That is it :)
 
 check this repo for example
 
-[https://codesandbox.io/s/misty-sun-zp6tg?file=/src/index.js](fork in CodeSandbox)
+[fork in CodeSandbox](https://codesandbox.io/s/misty-sun-zp6tg?file=/src/index.js)
