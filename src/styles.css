@@ -3,12 +3,10 @@ body {
 }
 
 .container {
-  border: 1px solid red;
   overflow: hidden;
 }
 
 .slider {
-  border: 1px solid green;
   display: flex;
   transition: 500ms linear;
   padding: 1em;
